@@ -27,18 +27,18 @@ using namespace std;
 using namespace cv;
 
 HFrame::HFrame(){
-	data=0;
-	width=height=0;
+  data=0;
+  width=height=0;
 }
 
 HFrame::HFrame(const HFrame& rhs){
-	data=rhs.data;
-	width=rhs.width;
-	height=rhs.height;
+  data=rhs.data;
+  width=rhs.width;
+  height=rhs.height;
 }
 
 HFrame::~HFrame(){
-	delete[] data;
+  delete[] data;
 }
 
 void	HFrame::setGL(){
@@ -48,8 +48,6 @@ void	HFrame::setGL(){
   glMatrixMode(GL_MODELVIEW);
   glLoadIdentity();
   glLoadMatrixd((double*)modelviewMatrix.data);
-  //glScalef(scale, scale, scale);
-  //glScalef(2, 2, 2);
 }
 
 bool HFrame::loadData(Mat img_bgra, Mat img_bgr, double focal_length){
